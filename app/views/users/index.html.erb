@@ -1,0 +1,27 @@
+
+
+<h1> List of Accounts with momento: </h1>
+
+<%= link_to 'New Account', new_user_path %>
+
+<table>
+	<tr>
+		<th> Name </th>
+		<th> Email </th>
+		<th colspan="5"></th>
+	</tr>
+
+
+<% if @user.blank? %> 
+<% else %>
+	<% for user in @user %>
+	<tr>	
+  	<td> Name: <%= user.name %> </td>
+  	<td> Email id: <%= user.email %> </td>
+  	<td><%= link_to 'Show', user_path(user) %></td>
+  </tr>
+    
+   <% end %>
+  
+<% end %>
+</table>
